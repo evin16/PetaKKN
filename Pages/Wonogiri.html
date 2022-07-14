@@ -91,10 +91,10 @@
 
     <div id="map"></div>
 
-    <script type="text/javascript" src="../Peta/Boyolali.js"></script>
+    <script type="text/javascript" src="../Peta/Wonogiri.js"></script>
 
     <script type="text/javascript">
-      var map = L.map("map").setView([-7.51, 110.59], 12);
+      var map = L.map("map").setView([-8.0, 110.93], 12);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
@@ -187,7 +187,7 @@
       }
 
       /* global statesData */
-      geojson = L.geoJson(Boyolali, {
+      geojson = L.geoJson(Wonogiri, {
         style: style,
         onEachFeature: onEachFeature,
       }).addTo(map);
