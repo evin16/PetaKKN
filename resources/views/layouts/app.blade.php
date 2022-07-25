@@ -24,17 +24,18 @@
 
             <!-- Page Heading -->
             <header >
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[795px] font-inter">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[870px] font-inter">
                     {{ $header }}
                 </div>
             </header>
 
             <!-- Page Content -->
-            <main class=" relative z-10">
+            <main class=" relative z-10 font-inter">
                 {{ $slot }}
             </main>
 
 
         </div>
     </body>
+
 </html>

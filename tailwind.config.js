@@ -16,7 +16,8 @@ module.exports = {
                     textdark : '#100F0F',
                     textlight : '#F1F1F1',
                     blue : '#006EA4',
-                    red : '#F66951'
+                    red : '#F66951',
+                    cream : '#FFC5A3'
                 }
             },
             fontFamily: {
