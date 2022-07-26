@@ -29,7 +29,7 @@
 
 
     {{-- Jumbotron --}}
-    <div class="jumbotron text-primary-textdark bg-primary-textlight px-8 pt-16" id="lokasi_kkn">
+    <div class="jumbotron text-primary-textdark bg-primary-textlight px-8 pt-16 h-[100vh]" id="lokasi_kkn">
         <div class="content max-w-7xl mx-auto">
             <h1 class="font-semibold text-4xl mb-16 text-center">Pemetaan Kota Lokasi KKN UNS 2022</h1>
 
@@ -72,6 +72,11 @@
         </div>
 
     </div>
+
+    <!-- Map -->
+    <x-map>
+        
+    </x-map>
 
     <script>
         const scrollToLokasi = () => {
