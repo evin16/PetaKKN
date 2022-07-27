@@ -1,85 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="text-center font-semibold text-5xl text-primary-textlight mt-14">
+            Pemetaan Kelompok KKN Kota Surakarta
+        </h2>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div id='map'></div>
 
-    <title>Pemetaan KKN UNS 2022</title>
-
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-        }
-
-        .leaflet-container {
-            height: 400px;
-            width: 600px;
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
-
-    <style>
-        #map {
-            width: 100%;
-            height: 100%;
-        }
-
-        .info {
-            padding: 6px 8px;
-            font: 14px/16px Arial, Helvetica, sans-serif;
-            background: white;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
-
-        .info h4 {
-            margin: 0 0 5px;
-            color: #777;
-        }
-
-        .legend {
-            text-align: left;
-            line-height: 18px;
-            color: #555;
-        }
-
-        .legend i {
-            width: 18px;
-            height: 18px;
-            float: left;
-            margin-right: 8px;
-            opacity: 0.7;
-        }
-    </style>
-</head>
-
-<body>
-    <nav class="navbar navbar-light bg-light">
-        <div class=" container row">
-            <div class="col d-flex">
-                <a href="../index.html"><img src="../assets/logo.png" alt="logo" width="64px"></a>
-                <h3 class="m-3">Pemetaan Kelompok KKN Kabupaten Boyolali</h3>
-            </div>
-        </div>
-    </nav>
-
-    <div id='map'></div>
-
-    <script type="text/javascript" src="../Peta/Boyolali.js"></script>
+    <script type="text/javascript" src="../Peta/Surakarta.js"></script>
 
     <script type="text/javascript">
-        var map = L.map('map').setView([-7.51, 110.59], 12);
+        var map = L.map('map').setView([-7.57, 110.82], 15);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -96,7 +26,7 @@
 
         info.update = function(props) {
             this._div.innerHTML = '<h4>Pesebaran Tim KKN UNS 2022</h4>' + (props ?
-                '<b>' + props.KECAMATAN + '</b><br />' + props.Jumlah + ' Kelompok' : 'Hover over daerah Kecamatan');
+                '<b>' + props.KECAMATAN + '</b><br />' + props.Jumlah + ' Kelompok' : 'Hover over Kecamatan');
         };
 
         info.addTo(map);
@@ -104,11 +34,10 @@
 
         // get color depending on population density value
         function getColor(d) {
-            return d > 20 ? '#980043' :
-                d > 15 ? '#7a0177' :
-                d > 10 ? '#006837' :
-                d > 5 ? '#253494' :
-                d > 0 ? '#993404' : '#bd0026';
+            return d > 15 ? '#ffffcc' :
+                d > 10 ? '#a1dab4' :
+                d > 5 ? '#41b6c4' :
+                d > 0 ? '#2c7fb8' : '#253494';
         }
 
         function style(feature) {
@@ -159,7 +88,7 @@
         }
 
         /* global statesData */
-        geojson = L.geoJson(Boyolali, {
+        geojson = L.geoJson(statesData, {
             style: style,
             onEachFeature: onEachFeature
         }).addTo(map);
@@ -193,9 +122,7 @@
 
         legend.addTo(map);
     </script>
+    </x-slot>
 
 
-
-</body>
-
-</html>
+</x-app-layout>

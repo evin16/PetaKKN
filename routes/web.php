@@ -21,4 +21,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+// Route::get('/location/surakarta', function () {
+//     return view('location.surakarta');
+// })->name('surakarta');
+
 require __DIR__.'/auth.php';

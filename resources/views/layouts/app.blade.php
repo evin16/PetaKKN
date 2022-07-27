@@ -29,7 +29,6 @@
 
         <!-- Styles -->
         <style>
-            <style>
         html,
         body {
             height: 100%;
@@ -43,8 +42,10 @@
             max-height: 100%;
         }
         #map {
-            width: 100%;
+            width: 80%;
             height: 750px;
+            margin: 0 auto;
+
         }
 
         .info {

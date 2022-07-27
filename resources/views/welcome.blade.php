@@ -35,19 +35,66 @@
 
             {{-- Content --}}
             <div class="flex w-full justify-between flex-wrap text-primary-textdark">
-                <div class="btn-container basis-[19%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">SURAKARTA</button>
+                <div class="btn-container basis-[24%]">
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="SURAKARTA">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >SURAKARTA</button>
+                    </form>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">SUKOHARJO</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">BOYOLALI</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">KARANGANYAR</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">SRAGEN</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">WONOGIRI</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">KLATEN</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">MAGETAN</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">NGAWI</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">MAGELANG</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">KEBUMEN</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">PACITAN</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">GROBOGAN</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">BREBES</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">CILACAP</button>
+                </div>
+                <div class="btn-container basis-[24%]">
+                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">PANGANDARAN</button>
                 </div>
 
             </div>
         </div>
 
+        {{-- Map --}}
+        <div id="map"></div>
     </div>
 
-    {{-- Map --}}
-    <div class="leaflet-container relative z-10">
-        <x-map></x-map>
-    </div>
+    <script src="{{ asset('peta/Surakarta.js')}}" id="map_script"></script>
 
 
     <script>
@@ -63,7 +110,7 @@
             var bodyFormData = new FormData();
             var value = e.innerText;
             const kknMap = document.querySelector('.leaflet-container');
-            const body = document.querySelector('body');
+            const body = document.body;
 
 
             jQuery.ajax({
@@ -73,9 +120,19 @@
                     location: value
                 },
                 success: function(data) {
-                    console.log(data);
-                    kknMap.innerHTML == data ? console.log('sama') : console.log('beda');
-                    body.innerHTML += data;
+                    // console.log(data[0].js_coordinates);
+                    var s = document.createElement("script");
+                    s.type = 'text/javascript';
+                    // s.src = {{asset("/")}}'+'/'+value.filenames+';
+                    // body.appendChild(s);
+
+                    console.log(s);
+
+                    s1 = document.createElement("script");
+                    s1.type = 'text/javascript';
+                    // body.appendChild(s1);
+
+                    // console.log(data[0].js_coordinates);
                 },
                 error: function(data) {
                     console.log('error');
@@ -83,6 +140,120 @@
             })
         }
     </script>
+    {{-- <script>
+        var map = L.map('map').setView([-7.57, 110.82], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // control that shows state info on hover
+        var info = L.control();
+
+        info.onAdd = function(map) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+        };
+
+        info.update = function(props) {
+            this._div.innerHTML = '<h4>Pesebaran Tim KKN UNS 2022</h4>' + (props ?
+                '<b>' + props.KECAMATAN + '</b><br />' + props.Jumlah + ' Kelompok' : 'Hover over Kecamatan');
+        };
+
+        info.addTo(map);
+
+
+        // get color depending on population density value
+        function getColor(d) {
+            return d > 15 ? '#ffffcc' :
+                d > 10 ? '#a1dab4' :
+                d > 5 ? '#41b6c4' :
+                d > 0 ? '#2c7fb8' : '#253494';
+        }
+
+        function style(feature) {
+            return {
+                weight: 0.5,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7,
+                fillColor: getColor(feature.properties.Jumlah)
+            };
+        }
+
+        function highlightFeature(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+
+            info.update(layer.feature.properties);
+        }
+
+        var geojson;
+
+        function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+            info.update();
+        }
+
+        function zoomToFeature(e) {
+            map.fitBounds(e.target.getBounds());
+        }
+
+        function onEachFeature(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight,
+                click: zoomToFeature
+            });
+        }
+
+        /* global statesData */
+        geojson = L.geoJson(statesData, {
+            style: style,
+            onEachFeature: onEachFeature
+        }).addTo(map);
+
+        map.attributionControl.addAttribution('Universitas Sebelas Maret 2022');
+
+
+        var legend = L.control({
+            position: 'bottomright'
+        });
+
+        legend.onAdd = function(map) {
+
+            var div = L.DomUtil.create('div', 'info legend');
+            var grades = [0, 5, 10, 15, 20];
+            var labels = [];
+            var from, to;
+
+            for (var i = 0; i < grades.length; i++) {
+                from = grades[i];
+                to = grades[i + 1];
+
+                labels.push(
+                    '<i style="background:' + getColor(from + 1) + '"></i> ' +
+                    from + (to ? '&ndash;' + to : '+'));
+            }
+
+            div.innerHTML = labels.join('<br>');
+            return div;
+        };
+
+        legend.addTo(map);
+    </script> --}}
 
 
 </x-app-layout>
