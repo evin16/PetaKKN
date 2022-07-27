@@ -20,9 +20,9 @@ class LocationController extends Controller
 
         // return view('components.map');
 
-        dd($location[0]->name);
+        // dd($location[0]->name);
 
-        switch($location){
+        switch($location[0]->name){
 
             case 'Kota Surakarta':
                 return view('location.surakarta');

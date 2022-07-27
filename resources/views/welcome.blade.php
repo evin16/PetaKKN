@@ -42,51 +42,95 @@
                     </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">SUKOHARJO</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="SUKOHARJO">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >SUKOHARJO</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">BOYOLALI</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="BOYOLALI">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >BOYOLALI</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">KARANGANYAR</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="KARANGANYAR">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >KARANGANYAR</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">SRAGEN</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="SRAGEN">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >SRAGEN</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">WONOGIRI</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="WONOGIRI">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >WONOGIRI</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">KLATEN</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="KLATEN">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >KLATEN</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">MAGETAN</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="MAGETAN">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >MAGETAN</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">NGAWI</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="NGAWI">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >NGAWI</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">MAGELANG</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="MAGELANG">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >MAGELANG</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">KEBUMEN</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="KEBUMEN">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >KEBUMEN</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">PACITAN</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="PACITAN">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >PACITAN</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">GROBOGAN</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="GROBOGAN">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >GROBOGAN</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">BREBES</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="BREBES">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >BREBES</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">CILACAP</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="CILACAP">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >CILACAP</button>
+                    </form>
                 </div>
                 <div class="btn-container basis-[24%]">
-                    <button class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " onclick="getKknMap(this)">PANGANDARAN</button>
+                    <form method="post" action="{{ route('location.index') }}">
+                        <input type="hidden" name="location" value="PANGANDARAN">
+                        <button type="submit" class="bg-primary-cream mb-10 w-[200px] h-10 rounded-xl font-semibold text-xl " >PANGANDARAN</button>
+                    </form>
                 </div>
-
             </div>
         </div>
 
