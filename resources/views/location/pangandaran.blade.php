@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-center font-semibold text-5xl text-primary-textlight my-14">
-            Pemetaan Kelompok KKN Kabupaten Pangandaran
+            Pemetaan Kelompok KKN Kota Pangandaran
         </h2>
 
         <div id="map"></div>

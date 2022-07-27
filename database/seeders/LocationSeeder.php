@@ -52,6 +52,34 @@ class LocationSeeder extends Seeder
                 [
                     'name' => 'Kota Klaten',
                     'js_coordinates' => 'peta/Klaten.js',
+                ],
+                [
+                    'name' => 'Kabupaten Magelang',
+                    'js_coordinates' => 'peta/Magelang.js',
+                ],
+                [
+                    'name' => 'Kabupaten Kebumen',
+                    'js_coordinates' => 'peta/Kebumen.js',
+                ],
+                [
+                    'name' => 'Kabupaten Pacitan',
+                    'js_coordinates' => 'peta/Pacitan.js',
+                ],
+                [
+                    'name' => 'Kabupaten Grobogan',
+                    'js_coordinates' => 'peta/Grobogan.js',
+                ],
+                [
+                    'name' => 'Kota Brebes',
+                    'js_coordinates' => 'peta/Brebes.js',
+                ],
+                [
+                    'name' => 'Kabupaten Cilacap',
+                    'js_coordinates' => 'peta/Cilacap.js',
+                ],
+                [
+                    'name' => 'Kota Pangandaran',
+                    'js_coordinates' => 'peta/Pangandaran.js',
                 ]
             ];
 
