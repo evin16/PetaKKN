@@ -9,7 +9,7 @@
         <script type="text/javascript" src="{{ asset('peta/Sukoharjo.js') }}"></script>
 
         <script type="text/javascript">
-          var map = L.map("map").setView([-7.69, 110.83], 12);
+          var map = L.map("map").setView([-7.72, 110.83], 12);
 
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution:

@@ -9,7 +9,7 @@
     <script type="text/javascript" src="{{ asset('peta/Klaten.js') }}"></script>
 
     <script type="text/javascript">
-      var map = L.map("map").setView([-7.70, 110.60], 12);
+      var map = L.map("map").setView([-7.63, 110.69], 12);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:

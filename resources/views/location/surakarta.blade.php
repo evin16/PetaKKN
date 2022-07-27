@@ -9,7 +9,7 @@
     <script type="text/javascript" src="{{ asset('peta/Surakarta.js') }}"></script>
 
     <script type="text/javascript">
-        var map = L.map('map').setView([-7.57, 110.82], 15);
+        var map = L.map('map').setView([-7.57, 110.82], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -11,7 +11,7 @@
         <script type="text/javascript" src="{{ asset('peta/Boyolali.js') }}"></script>
 
         <script type="text/javascript">
-          var map = L.map("map").setView([-7.6, 110.59], 12);
+          var map = L.map("map").setView([-7.55, 110.61], 11);
 
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution:

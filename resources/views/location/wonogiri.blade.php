@@ -9,7 +9,7 @@
         <script type="text/javascript" src="{{ asset('peta/Wonogiri.js') }}"></script>
 
         <script type="text/javascript">
-          var map = L.map("map").setView([-8.0, 110.93], 12);
+          var map = L.map("map").setView([-8.013050, 111.054627], 11);
 
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution:

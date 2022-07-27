@@ -9,7 +9,7 @@
         <script type="text/javascript" src="{{ asset('peta/Sragen.js') }}"></script>
 
         <script type="text/javascript">
-            var map = L.map('map').setView([-7.41, 111.02], 12);
+            var map = L.map('map').setView([-7.307265, 110.842774], 12);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -9,7 +9,7 @@
     <script type="text/javascript" src="{{ asset('peta/Magelang.js') }}"></script>
 
     <script type="text/javascript">
-      var map = L.map("map").setView([-7.65, 111.32], 12);
+      var map = L.map("map").setView([-7.57, 110.2], 12);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:

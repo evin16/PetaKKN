@@ -9,7 +9,7 @@
     <script type="text/javascript" src="{{ asset('peta/Karanganyar.js') }}"></script>
 
     <script type="text/javascript">
-      var map = L.map("map").setView([-7.6, 110.98], 12);
+      var map = L.map("map").setView([-7.6, 110.98], 11);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
