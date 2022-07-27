@@ -6,7 +6,7 @@
 
         <div id='map'></div>
 
-    <script type="text/javascript" src="../Peta/Karanganyar.js"></script>
+    <script type="text/javascript" src="{{ asset('peta/Karanganyar.js') }}"></script>
 
     <script type="text/javascript">
       var map = L.map("map").setView([-7.6, 110.98], 12);

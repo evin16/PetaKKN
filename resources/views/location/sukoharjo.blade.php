@@ -3,10 +3,10 @@
         <h2 class="text-center font-semibold text-5xl text-primary-textlight my-14">
             Pemetaan Kelompok KKN Kabupaten Sukoharjo
         </h2>
-        
+
         <div id="map"></div>
 
-        <script type="text/javascript" src="../Peta/Sukoharjo.js"></script>
+        <script type="text/javascript" src="{{ asset('peta/Sukoharjo.js') }}"></script>
 
         <script type="text/javascript">
           var map = L.map("map").setView([-7.69, 110.83], 12);

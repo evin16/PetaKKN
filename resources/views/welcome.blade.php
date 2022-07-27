@@ -133,12 +133,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- Map --}}
-        <div id="map"></div>
     </div>
-
-    <script src="{{ asset('peta/Surakarta.js')}}" id="map_script"></script>
 
 
     <script>
@@ -148,40 +143,6 @@
                 behavior: 'smooth',
                 block: 'start'
             });
-        }
-
-        const getKknMap = (e) => {
-            var bodyFormData = new FormData();
-            var value = e.innerText;
-            const kknMap = document.querySelector('.leaflet-container');
-            const body = document.body;
-
-
-            jQuery.ajax({
-                url: `/api/map/{location}`,
-                type: 'GET',
-                data: {
-                    location: value
-                },
-                success: function(data) {
-                    // console.log(data[0].js_coordinates);
-                    var s = document.createElement("script");
-                    s.type = 'text/javascript';
-                    // s.src = {{asset("/")}}'+'/'+value.filenames+';
-                    // body.appendChild(s);
-
-                    console.log(s);
-
-                    s1 = document.createElement("script");
-                    s1.type = 'text/javascript';
-                    // body.appendChild(s1);
-
-                    // console.log(data[0].js_coordinates);
-                },
-                error: function(data) {
-                    console.log('error');
-                },
-            })
         }
     </script>
     {{-- <script>
