@@ -122,6 +122,20 @@
             };
 
             legend.addTo(map);
+
+            // marker
+            var desa = [
+                ['PASAR KLIWON', -7.581113, 110.830505],
+                ['KAUMAN', -7.572757, 110.825884],
+
+            ];
+
+            for (let i = 0; i < desa.length; i++) {
+                marker = L.marker([desa[i][1], desa[i][2]])
+                .bindPopup(`<b>${desa[i][0]}</b>`)
+                .addTo(map);
+                console.log(marker);
+            }
         </script>
     </x-slot>
 </x-app-layout>
