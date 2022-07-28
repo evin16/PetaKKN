@@ -1,15 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-center font-semibold text-5xl text-primary-textlight my-14">
-            Pemetaan Kelompok KKN Kabupaten Magetan
+            Pemetaan Kelompok KKN Kota Pangandaran
         </h2>
 
         <div id="map"></div>
 
-    <script type="text/javascript" src="{{ asset('peta/Magetan.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('peta/Pangandaran.js') }}"></script>
 
     <script type="text/javascript">
-      var map = L.map("map").setView([-7.64, 111.35], 11);
+      var map = L.map("map").setView([-7.56, 108.44], 12);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
@@ -100,7 +100,7 @@
       }
 
       /* global statesData */
-      geojson = L.geoJson(Magetan, {
+      geojson = L.geoJson(Pangandaran, {
         style: style,
         onEachFeature: onEachFeature,
       }).addTo(map);
@@ -138,16 +138,10 @@
 
       // marker
       var desa = [
-                ['GENILANGIT',	-7.709578, 111.219388],
-                ['SIDOMUKTI',	-7.686776, 111.272145],
-                ['GONGGANG',	-7.732420, 111.226350],
-                ['KRATON',	-7.592536, 111.446808],
-                ['GULUN',	-7.591336, 111.421000],
-                ['TANJUNGSEPREH',	-7.588621, 111.411001],
-                ['GAMBIRAN',	-7.607572, 111.467073],
-                ['JAJAR',	-7.522271, 111.484861],
-                ['KARTOHARJO',	-7.535334, 111.489255],
-                ['SUKOWIDI',	-7.544002, 111.502836]
+                ['DS. GIRIKARYA',	-7.598731, 108.462683],
+                ['DS. CIJALU',	-7.543044, 108.373923],
+                ['DS. CIPANCUR',	-7.543107, 108.389070],
+                ['DS. PILAR',	-7.568937, 108.452522]
             ];
 
             for (let i = 0; i < desa.length; i++) {

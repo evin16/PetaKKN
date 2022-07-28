@@ -1,15 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-center font-semibold text-5xl text-primary-textlight my-14">
-            Pemetaan Kelompok KKN Kabupaten Magetan
+            Pemetaan Kelompok KKN Kabupaten Pacitan
         </h2>
 
         <div id="map"></div>
 
-    <script type="text/javascript" src="{{ asset('peta/Magetan.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('peta/Pacitan.js') }}"></script>
 
     <script type="text/javascript">
-      var map = L.map("map").setView([-7.64, 111.35], 11);
+      var map = L.map("map").setView([-8.14, 111.17], 11);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
@@ -100,7 +100,7 @@
       }
 
       /* global statesData */
-      geojson = L.geoJson(Magetan, {
+      geojson = L.geoJson(Pacitan, {
         style: style,
         onEachFeature: onEachFeature,
       }).addTo(map);
@@ -138,20 +138,41 @@
 
       // marker
       var desa = [
-                ['GENILANGIT',	-7.709578, 111.219388],
-                ['SIDOMUKTI',	-7.686776, 111.272145],
-                ['GONGGANG',	-7.732420, 111.226350],
-                ['KRATON',	-7.592536, 111.446808],
-                ['GULUN',	-7.591336, 111.421000],
-                ['TANJUNGSEPREH',	-7.588621, 111.411001],
-                ['GAMBIRAN',	-7.607572, 111.467073],
-                ['JAJAR',	-7.522271, 111.484861],
-                ['KARTOHARJO',	-7.535334, 111.489255],
-                ['SUKOWIDI',	-7.544002, 111.502836]
+                ['CANDI',	-8.246477, 111.009859],
+                ['WATUKARUNG',	-8.234167, 110.978600],
+                ['SUGIHWARAS',	-8.190458, 110.994483],
+                ['POKO',	-8.239884, 111.038041],
+                ['DONOROJO',	-8.140710, 110.940974],
+                ['KLESEM',	-8.261815, 111.181307],
+                ['SIDOMULYO',	-8.239804, 111.267615],
+                ['KARANGANYAR',	-8.226837, 111.147643],
+                ['KLESEM 2',	-8.267251, 111.171865],
+                ['SIDOMULYO 1',	-8.253558, 111.186865],
+                ['KLEPU',	-8.170392, 110.934547],
+                ['HADILUWIH',	-8.235230, 111.307146],
+                ['PAGEREJO',	-8.217696, 111.303187],
+                ['TAHUNAN BARU',	-8.015564, 111.343201],
+                ['GEMAHARJO',	-8.049949, 111.347576],
+                ['KARANGANYAR 2',	-8.235671, 111.157771],
+                ['GEDOMPOL',	-8.140683, 110.926468],
+                ['SIDOMULYO 2',	-8.252539, 111.198195],
+                ['GEDOMPOL 2',	-8.131762, 110.937626],
+
+
             ];
 
+            var redIcon = new L.Icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+                });
+
+
             for (let i = 0; i < desa.length; i++) {
-                marker = L.marker([desa[i][1], desa[i][2]])
+                marker = L.marker([desa[i][1], desa[i][2]], {icon: redIcon})
                 .bindPopup(`<b>${desa[i][0]}</b>`)
                 .addTo(map);
                 console.log(marker);

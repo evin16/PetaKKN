@@ -1,101 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="text-center font-semibold text-5xl text-primary-textlight my-14">
+            Pemetaan Kelompok KKN Kota Klaten
+        </h2>
 
-    <title>Pemetaan KKN UNS 2022</title>
+        <div id="map"></div>
 
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-      crossorigin=""
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <style>
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-      }
-
-      .leaflet-container {
-        height: 750px;
-        width: 100%;
-        max-width: 100%;
-        max-height: 100%;
-      }
-    </style>
-
-    <style>
-      #map {
-        width: 100%;
-        height: 750px;
-      }
-
-      .info {
-        padding: 6px 8px;
-        font: 14px/16px Arial, Helvetica, sans-serif;
-        background: white;
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-      }
-
-      .info h4 {
-        margin: 0 0 5px;
-        color: #777;
-      }
-
-      .legend {
-        text-align: left;
-        line-height: 18px;
-        color: #555;
-      }
-
-      .legend i {
-        width: 18px;
-        height: 18px;
-        float: left;
-        margin-right: 8px;
-        opacity: 0.7;
-      }
-    </style>
-  </head>
-
-  <body>
-    <nav class="navbar sticky-top navbar-light bg-light">
-      <div class="container row">
-        <div class="col d-flex">
-          <a href="../index.html"
-            ><img src="../assets/logo.png" alt="logo" width="64px"
-          /></a>
-        </div>
-        <div class="col">
-          <h3 class="m-3">Pemetaan Kelompok KKN Kota Klaten</h3>
-        </div>
-      </div>
-    </nav>
-
-    <div id="map"></div>
-
-    <script type="text/javascript" src="../Peta/Klaten.js"></script>
+    <script type="text/javascript" src="{{ asset('peta/Klaten.js') }}"></script>
 
     <script type="text/javascript">
-      var map = L.map("map").setView([-7.70, 110.60], 12);
+      var map = L.map("map").setView([-7.63, 110.69], 12);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
@@ -221,6 +135,49 @@
       };
 
       legend.addTo(map);
+
+      // marker
+      var desa = [
+                ['BEKU',-7.653045, 110.638562],
+                ['BRANGKAL ',	-7.646680, 110.647529],
+                ['JURANGJERO',	-7.639179, 110.633640],
+                ['GLEDEG',	-7.632015, 110.635493],
+                ['JEBLOG',	-7.616936, 110.634461],
+                ['NGABEYAN',	-7.635188, 110.647867],
+                ['SOROPATEN',	-7.634449, 110.617890],
+                ['PONDOK',	-7.624740, 110.635597],
+                ['PADAS',	-7.640875, 110.609758],
+                ['TROSO',	-7.664532, 110.645280],
+                ['KARANGANOM',	-7.646648, 110.621273],
+                ['GEMPOL',	-7.623894, 110.623087],
+                ['PONGGOK',	-7.609881, 110.640981],
+                ['NGANJAT 1',	-7.616842, 110.643541],
+                ['GLAGAHWANGI',	-7.649142, 110.663073],
+                ['KARANGLO',	-7.612341, 110.654627],
+                ['JIMUS',	-7.617950, 110.653587],
+                ['TURUS',	-7.616471, 110.663038],
+                ['POLANHARJO',	-7.613900, 110.656739],
+                ['KAPUNGAN',	-7.640738, 110.666172],
+                ['JANTI',	-7.596277, 110.655983],
+                ['WANGEN',	-7.602599, 110.657251],
+                ['JELOBO',	-7.636104, 110.747513],
+                ['BOTO',	-7.615529, 110.717129],
+                ['BULAN',	-7.629644, 110.720946],
+                ['TELOYO',	-7.624723, 110.761864],
+                ['SEKARAN',	-7.611012, 110.723841],
+                ['GUNTING',	-7.645983, 110.770640],
+                ['LUMBUNG KEREP',	-7.628821, 110.735811],
+                ['NGREDEN',	-7.638885, 110.732406]
+            ];
+
+            for (let i = 0; i < desa.length; i++) {
+                marker = L.marker([desa[i][1], desa[i][2]])
+                .bindPopup(`<b>${desa[i][0]}</b>`)
+                .addTo(map);
+                console.log(marker);
+            }
     </script>
-  </body>
-</html>
+    </x-slot>
+
+
+</x-app-layout>
