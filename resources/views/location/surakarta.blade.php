@@ -127,11 +127,22 @@ info.update = function(props) {
             var desa = [
                 ['PASAR KLIWON', -7.581113, 110.830505],
                 ['KAUMAN', -7.572757, 110.825884],
+                ['SEWU', -7.572871, 110.843645]
 
             ];
 
+            var redIcon = new L.Icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+                });
+
+
             for (let i = 0; i < desa.length; i++) {
-                marker = L.marker([desa[i][1], desa[i][2]])
+                marker = L.marker([desa[i][1], desa[i][2]], {icon: redIcon})
                 .bindPopup(`<b>${desa[i][0]}</b>`)
                 .addTo(map);
                 console.log(marker);
