@@ -34,11 +34,10 @@
 
             // get color depending on population density value
             function getColor(d) {
-                return d > 20 ? '#980043' :
-                    d > 15 ? '#7a0177' :
-                    d > 10 ? '#006837' :
-                    d > 5 ? '#253494' :
-                    d > 0 ? '#993404' : '#bd0026';
+                return d > 15 ? '#ffffcc' :
+                d > 10 ? '#a1dab4' :
+                d > 5 ? '#41b6c4' :
+                d > 0 ? '#2c7fb8' : '#253494';
             }
 
             function style(feature) {
@@ -125,13 +124,46 @@
 
             // marker
             var desa = [
-                ['PASAR KLIWON', -7.581113, 110.830505],
-                ['KAUMAN', -7.572757, 110.825884],
-
+                ['GENENG', -7.391884, 110.786813],
+                ['JERUK', -7.384459, 110.799560],
+                ['SUNGGINGAN',-7.375844, 110.808751],
+                ['GIRIMARGO',-7.372149, 110.822698],
+                ['DOYONG',-7.362288, 110.838982],
+                ['SOKO',-7.351308, 110.831412],
+                ['BROJOL',-7.359577, 110.804133],
+                ['BAGOR',-7.340743, 110.810016],
+                ['GILIREJO',-7.289205, 110.798621],
+                ['GILIREJO BARU',-7.276183, 110.802370],
+                ['PENDEM',-7.336494, 110.842781],
+                ['HADILUWIH',-7.355589, 110.860353],
+                ['JATI',-7.351622, 110.880052],
+                ['CEPOKO',-7.337377, 110.884679],
+                ['MOJOPURO',-7.328913, 110.865887],
+                ['NGANDUL',-7.325365, 110.857218],
+                ['PAGAK',-7.320413, 110.893567],
+                ['NGARGOSARI',-7.278713, 110.863468],
+                ['NGARGOTIRTO',-7.301689, 110.855966],
+                ['MONDOKAN',-7.320425, 110.931938],
+                ['TEMPELREJO',-7.351635, 110.925863],
+                ['TROMBOL',-7.359186, 110.942417],
+                ['PARE',-7.320275, 110.912883],
+                ['JEKANI',-7.331403, 110.935029],
+                ['KEDAWUNG',-7.313608, 110.945263],
+                ['JAMBANGAN',-7.292240, 110.948177]
             ];
 
+            var redIcon = new L.Icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+                });
+
+
             for (let i = 0; i < desa.length; i++) {
-                marker = L.marker([desa[i][1], desa[i][2]])
+                marker = L.marker([desa[i][1], desa[i][2]], {icon: redIcon})
                 .bindPopup(`<b>${desa[i][0]}</b>`)
                 .addTo(map);
                 console.log(marker);

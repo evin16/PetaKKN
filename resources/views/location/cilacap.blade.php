@@ -138,18 +138,30 @@
 
       // marker
       var desa = [
-                ['KUTAWARU 1',	-7.707998, 108.978316],
-                ['KUTAWARU 2',	-7.705545, 108.973830],
-                ['KUTAWARU 3',	-7.706465, 108.979244],
-                ['ADIRAJA 1',	-7.651430, 109.181241],
-                ['ADIRAJA 2',	-7.657555, 109.177465],
-                ['KARANGTALUN',	-7.677599, 109.018900]
-
+                ['KUTAWARU 1','bersama', 'mabar',-7.707998, 108.978316],
+                ['KUTAWARU 2','Tidur', 'istirahat',-7.705545, 108.973830],
+                ['KUTAWARU 3','Tidur', 'istirahat',-7.706465, 108.979244],
+                ['ADIRAJA 1','Tidur', 'istirahat',-7.651430, 109.181241],
+                ['ADIRAJA 2','Tidur', 'istirahat',-7.657555, 109.177465],
+                ['KARANGTALUN',	'Tidur', 'istirahat',-7.677599, 109.018900]
             ];
 
             for (let i = 0; i < desa.length; i++) {
-                marker = L.marker([desa[i][1], desa[i][2]])
-                .bindPopup(`<b>${desa[i][0]}</b>`)
+                marker = L.marker([desa[i][3], desa[i][4]])
+                .bindPopup(`<div class="flex flex-col items-center">
+                    <div class="item">
+                        Desa: ${desa[i][0]}
+                    </div>
+                    <div class="item">
+                        Tema: ${desa[i][1]}
+                    </div>
+                    <div class="item">
+                        Judul: ${desa[i][2]}
+                    </div>
+                    <div class="item">
+                        ${desa[i][0]}
+                    </div>
+                </div>`)
                 .addTo(map);
                 console.log(marker);
             }
@@ -158,3 +170,18 @@
 
 
 </x-app-layout>
+
+{{-- <div class="flex flex-col items-center">
+    <div class="item">
+        ${desa[i][0]}
+    </div>
+    <div class="item">
+        ${desa[i][0]}
+    </div>
+    <div class="item">
+        ${desa[i][0]}
+    </div>
+    <div class="item">
+        ${desa[i][0]}
+    </div>
+</div> --}}

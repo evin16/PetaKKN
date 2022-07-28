@@ -138,17 +138,36 @@
 
       // marker
       var desa = [
-                ['PASAR KLIWON', -7.581113, 110.830505],
-                ['KAUMAN', -7.572757, 110.825884],
+                ['KERTASINDUYASA',	-6.956467, 109.058583],
+                ['JATIBARANG KIDUL',	-6.973992, 109.059172],
+                ['KEBONAGUNG',	-6.961780, 109.024699],
+                ['TEMBELANG',	-6.934848, 109.058330],
+                ['JATIBARANG LOR',	-6.965321, 109.063965],
+                ['CENANG',	-6.991832, 108.984400],
+                ['JATIROKEH',	-6.999465, 109.019318],
+                ['SONGGOM',	-7.039579, 109.000998],
+                ['WANATAWANG',	-6.984776, 109.006723],
+                ['DUKUHMAJA',	-6.975371, 109.041617],
+
 
         ];
 
-        for (let i = 0; i < desa.length; i++) {
-            marker = L.marker([desa[i][1], desa[i][2]])
-            .bindPopup(`<b>${desa[i][0]}</b>`)
-            .addTo(map);
-            console.log(marker);
-        }
+        var redIcon = new L.Icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+                });
+
+
+            for (let i = 0; i < desa.length; i++) {
+                marker = L.marker([desa[i][1], desa[i][2]], {icon: redIcon})
+                .bindPopup(`<b>${desa[i][0]}</b>`)
+                .addTo(map);
+                console.log(marker);
+            }
     </script>
     </x-slot>
 
